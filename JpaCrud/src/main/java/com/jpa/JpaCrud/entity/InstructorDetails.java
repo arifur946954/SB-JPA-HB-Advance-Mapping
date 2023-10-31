@@ -3,7 +3,7 @@ package com.jpa.JpaCrud.entity;
 import jakarta.persistence.*;
 
 @Entity
-@Table(name = "istructor_details")
+@Table(name = "instructor_detail")
 
 public class InstructorDetails {
     @Id

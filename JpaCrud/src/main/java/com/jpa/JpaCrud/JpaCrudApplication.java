@@ -1,5 +1,8 @@
 package com.jpa.JpaCrud;
 
+import com.jpa.JpaCrud.dao.AppDao;
+import com.jpa.JpaCrud.entity.Instructor;
+import com.jpa.JpaCrud.entity.InstructorDetails;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -13,10 +16,21 @@ public class JpaCrudApplication {
 		SpringApplication.run(JpaCrudApplication.class, args);
 	}
 	@Bean
-	public CommandLineRunner commandLineRunner(String[] args){
+	public CommandLineRunner commandLineRunner(AppDao appDao){
 		return  runner->{
-			System.out.println("hello world");
+		createConstructor(appDao);
 		};
+	}
+
+	private void createConstructor(AppDao appDao) {
+		Instructor tempInstructor=new Instructor("Zarifur","Rahman","zarid@gmail.com");
+		InstructorDetails tempInstructorDetails=new InstructorDetails("zarif@youtube.com","playing");
+		//associate the obj
+		tempInstructor.setInstructorDetails(tempInstructorDetails);
+		System.out.println(tempInstructor);
+		appDao.save(tempInstructor);
+		System.out.println("done");
+		//save the instructor details
 	}
 
 }
