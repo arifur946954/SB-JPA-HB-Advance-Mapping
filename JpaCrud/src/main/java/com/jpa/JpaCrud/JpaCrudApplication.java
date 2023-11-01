@@ -18,8 +18,15 @@ public class JpaCrudApplication {
 	@Bean
 	public CommandLineRunner commandLineRunner(AppDao appDao){
 		return  runner->{
-		createConstructor(appDao);
+		//createConstructor(appDao);
+			findInstructor(appDao);
 		};
+	}
+
+	private void findInstructor(AppDao appDao) {
+		int theId=1;
+	Instructor tempInsTructor=	appDao.findInstructorById(theId);
+		System.out.println(tempInsTructor.getInstructorDetails());
 	}
 
 	private void createConstructor(AppDao appDao) {
@@ -29,6 +36,8 @@ public class JpaCrudApplication {
 		tempInstructor.setInstructorDetails(tempInstructorDetails);
 		System.out.println(tempInstructor);
 		appDao.save(tempInstructor);
+
+
 		System.out.println("done");
 		//save the instructor details
 	}
