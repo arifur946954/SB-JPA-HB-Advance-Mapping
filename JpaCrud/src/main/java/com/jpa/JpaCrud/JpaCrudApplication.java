@@ -19,13 +19,20 @@ public class JpaCrudApplication {
 	public CommandLineRunner commandLineRunner(AppDao appDao){
 		return  runner->{
 		//createConstructor(appDao);
-			findInstructor(appDao);
+			//findInstructor(appDao);
+			deleteInstructor(appDao);
 		};
+	}
+
+	private void deleteInstructor(AppDao appDao) {
+		int theId=1;
+		appDao.deleteInstructorById(theId);
 	}
 
 	private void findInstructor(AppDao appDao) {
 		int theId=1;
 	Instructor tempInsTructor=	appDao.findInstructorById(theId);
+		System.out.println(tempInsTructor);
 		System.out.println(tempInsTructor.getInstructorDetails());
 	}
 
