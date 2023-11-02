@@ -1,6 +1,7 @@
 package com.jpa.JpaCrud.dao;
 
 import com.jpa.JpaCrud.entity.Instructor;
+import com.jpa.JpaCrud.entity.InstructorDetails;
 import jakarta.persistence.EntityManager;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
@@ -31,4 +32,11 @@ public class AppDaoImp implements AppDao{
       Instructor theInstructor=   entityManager.find(Instructor.class ,theId);
         entityManager.remove(theInstructor);
     }
+
+    @Override
+    public InstructorDetails findInstructoDetailsById(int theId) {
+        return entityManager.find(InstructorDetails.class,theId);
+    }
+
+
 }

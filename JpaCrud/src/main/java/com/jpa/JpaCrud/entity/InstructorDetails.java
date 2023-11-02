@@ -14,6 +14,8 @@ public class InstructorDetails {
     private String youtubeChannal;
     @Column(name = "hobby")
     private String hobby;
+//    @OneToOne(mappedBy = "instructorDetails",cascade = CascadeType.ALL)
+//    private Instructor instructor;
 
     public InstructorDetails() {
     }
@@ -21,7 +23,10 @@ public class InstructorDetails {
     public InstructorDetails(String youtubeChannal, String hobby) {
         this.youtubeChannal = youtubeChannal;
         this.hobby = hobby;
+
     }
+
+
 
     public int getId() {
         return id;
@@ -46,6 +51,7 @@ public class InstructorDetails {
     public void setHobby(String hobby) {
         this.hobby = hobby;
     }
+
 
     @Override
     public String toString() {
