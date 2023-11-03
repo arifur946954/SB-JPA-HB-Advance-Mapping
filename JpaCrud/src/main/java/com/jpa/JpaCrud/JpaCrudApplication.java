@@ -22,12 +22,12 @@ public class JpaCrudApplication {
 			//findInstructor(appDao);
 			//deleteInstructor(appDao);
 			//findInstructorDetails(appDao);
-			//deleteInstructorDetails(appDao);
+			deleteInstructorDetails(appDao);
 		};
 	}
 
 	private void deleteInstructorDetails(AppDao appDao) {
-		int theId=2;
+		int theId=4;
 		appDao.deleteInstructorDetails(theId);
 	}
 
@@ -52,8 +52,8 @@ public class JpaCrudApplication {
 	}
 
 	private void createConstructor(AppDao appDao) {
-		Instructor tempInstructor=new Instructor("Test3","Rahman","test3@gmail.com");
-		InstructorDetails tempInstructorDetails=new InstructorDetails("test3@youtube.com","swimming");
+		Instructor tempInstructor=new Instructor("Test5","Rahman","test5@gmail.com");
+		InstructorDetails tempInstructorDetails=new InstructorDetails("test5@youtube.com","swimming");
 		//associate the obj
 		tempInstructor.setInstructorDetails(tempInstructorDetails);
 		System.out.println(tempInstructor);
