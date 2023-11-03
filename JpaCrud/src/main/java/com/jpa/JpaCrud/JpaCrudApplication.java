@@ -21,8 +21,14 @@ public class JpaCrudApplication {
 		//createConstructor(appDao);
 			//findInstructor(appDao);
 			//deleteInstructor(appDao);
-			findInstructorDetails(appDao);
+			//findInstructorDetails(appDao);
+			//deleteInstructorDetails(appDao);
 		};
+	}
+
+	private void deleteInstructorDetails(AppDao appDao) {
+		int theId=2;
+		appDao.deleteInstructorDetails(theId);
 	}
 
 	private void findInstructorDetails(AppDao appDao) {
