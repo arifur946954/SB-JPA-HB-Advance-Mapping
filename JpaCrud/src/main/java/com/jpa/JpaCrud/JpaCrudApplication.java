@@ -19,19 +19,19 @@ public class JpaCrudApplication {
 	public CommandLineRunner commandLineRunner(AppDao appDao){
 		return  runner->{
 		//createConstructor(appDao);
-			findInstructor(appDao);
+			//findInstructor(appDao);
 			//deleteInstructor(appDao);
-			//findInstructorDetails(appDao);
+			findInstructorDetails(appDao);
 		};
 	}
 
-//	private void findInstructorDetails(AppDao appDao) {
-//		int theId=1;
-//	InstructorDetails tempInatructorsDetails=	appDao.findInstructoDetailsById(theId);
-//		System.out.println(tempInatructorsDetails);
-//		System.out.println(tempInatructorsDetails.getInstructor());
-//
-//	}
+	private void findInstructorDetails(AppDao appDao) {
+		int theId=1;
+	InstructorDetails tempInatructorsDetails=	appDao.findInstructoDetailsById(theId);
+		System.out.println(tempInatructorsDetails);
+		System.out.println(tempInatructorsDetails.getInstructor());
+
+	}
 
 	private void deleteInstructor(AppDao appDao) {
 		int theId=1;
@@ -42,12 +42,12 @@ public class JpaCrudApplication {
 		int theId=2;
 	Instructor tempInsTructor=	appDao.findInstructorById(theId);
 		System.out.println(tempInsTructor);
-		System.out.println("instructor detils is: "+tempInsTructor.getInstructorDetails());
+		//System.out.println("instructor detils is: "+tempInsTructor.getInstructorDetails());
 	}
 
 	private void createConstructor(AppDao appDao) {
-		Instructor tempInstructor=new Instructor("Test2","Rahman","test2@gmail.com");
-		InstructorDetails tempInstructorDetails=new InstructorDetails("test2@youtube.com","swimming");
+		Instructor tempInstructor=new Instructor("Test3","Rahman","test3@gmail.com");
+		InstructorDetails tempInstructorDetails=new InstructorDetails("test3@youtube.com","swimming");
 		//associate the obj
 		tempInstructor.setInstructorDetails(tempInstructorDetails);
 		System.out.println(tempInstructor);
