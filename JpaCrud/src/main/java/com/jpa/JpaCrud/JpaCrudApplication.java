@@ -23,6 +23,7 @@ public class JpaCrudApplication {
 			//deleteInstructor(appDao);
 			//findInstructorDetails(appDao);
 			deleteInstructorDetails(appDao);
+			//test file
 		};
 	}
 
