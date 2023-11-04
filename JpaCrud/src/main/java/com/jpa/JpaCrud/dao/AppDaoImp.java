@@ -44,6 +44,7 @@ public class AppDaoImp implements AppDao{
        InstructorDetails tempIns=  entityManager.find(InstructorDetails.class,theId);
        tempIns.getInstructor().setInstructorDetails(null);
         entityManager.remove(tempIns);
+        //this is bi
     }
 
 
